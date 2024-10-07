@@ -7,10 +7,11 @@
 
 <body>
     <div id="container">
-        <h1>[ hello ]</h1>
+        <h1>[ What week is it? ]</h1>
         <form>
             <div class="input">
                 <input type="text" placeholder="Weeknr" id="weeknr" size="17" autofocus="autofocus" readonly />
+                <input type="text" placeholder="WeekOddEven" id="weekOddEven" size="17" autofocus="autofocus" readonly />
             </div>
         </form>
     </div>
@@ -29,7 +30,12 @@
 
     document.addEventListener('DOMContentLoaded', (event) => {
         const weeknrInput = document.getElementById('weeknr');
+        const weekOddEvenInput = document.getElementById('weekOddEven');
+
         const currentWeekNumber = getWeekNumber(new Date());
+
         weeknrInput.value = currentWeekNumber;
+        weekOddEvenInput.value = currentWeekNumber % 2 === 0 ? 'Even' : 'Odd';
+
     });
 </script>
